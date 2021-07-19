@@ -26,7 +26,7 @@
                         <a href="#" class='btn btn-outline-warning'>EDIT</a>
                     </td>
                     <td >
-                        <a href="#" class='btn btn-outline-danger'>EDELETE</a>
+                        <a href="#" class='btn btn-outline-danger'>DELETE</a>
                     </td>
                 </tr>    
             @endforeach
