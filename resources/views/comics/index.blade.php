@@ -4,7 +4,7 @@
 <section class='container'>
     <h1 class='text-center mt-4'>All Comics</h1>
 
-    <table class="table table-striped">
+    <table class="table table-striped mt-4">
         <thead>
             <tr>
                 <th>Id</th>
@@ -20,19 +20,21 @@
                     <td>{{$item->title}}</td>
                     <td>{{$item->series}}</td>
                     <td >
-                        <a href="" class='btn btn-outline-success'>SHOW</a>
+                    <a href="{{ route('comics.show', $item->id)}}" class='btn btn-outline-success'>SHOW</a>
                     </td>
                     <td >
-                        <a href="" class='btn btn-outline-warning'>EDIT</a>
+                        <a href="#" class='btn btn-outline-warning'>EDIT</a>
                     </td>
                     <td >
-                        <a href="" class='btn btn-outline-danger'>EDELETE</a>
+                        <a href="#" class='btn btn-outline-danger'>EDELETE</a>
                     </td>
                 </tr>    
             @endforeach
         </tbody>
-
     </table>
+    <div>
+        {{$comics->links()}}
+    </div>
 </section>
 
     
