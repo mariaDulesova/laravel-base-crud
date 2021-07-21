@@ -14,7 +14,7 @@
                 <p>{{$comic->series}}</p> 
                 <h5>Description</h5>
                 <p>{{$comic->description}}</p>
-                <h5>Description</h5>
+                <h5>Type</h5>
                 <p>{{$comic->type}}</p>
                 <h5>Price </h5>
                 <p>{{$comic->price}} &euro;</p>
