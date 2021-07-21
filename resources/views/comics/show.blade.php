@@ -14,16 +14,15 @@
                 <p>{{$comic->series}}</p> 
                 <h5>Description</h5>
                 <p>{{$comic->description}}</p>
+                <h5>Description</h5>
+                <p>{{$comic->type}}</p>
                 <h5>Price </h5>
                 <p>{{$comic->price}} &euro;</p>
-            </div>
-            
-            
+            </div>  
         </div>
-
     </div>
     <div>
         <a href="{{ route('comics.index')}}" class='btn btn-secondary btn-sm'>Back</a>
-    </div>
-    
+        <a href="{{ route('comics.edit', $comic->id)}}" class='btn btn-warning btn-sm'>Edit</a>
+    </div>  
 @endsection
