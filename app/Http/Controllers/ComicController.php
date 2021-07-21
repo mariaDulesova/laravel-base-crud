@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comic;
+use Illuminate\Support\Str;
 
 class ComicController extends Controller
 {
@@ -25,7 +26,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -36,7 +37,21 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request->all();
+
+        //1. Creare una nuova istanza
+        $comic = new Comic();
+
+        //2. Assegnare valori
+        $slug = $comic['title'];
+        $comic->slug = Str::slug($slug, '-');
+        $comic->fill($data); //IMPORTANTE: per utilizzare il fill(), bisogna aggiungere $fillable nel model 
+
+        //3. Salvare istanza
+        $comic->save();
+
+        return redirect()->route('comics.show', $comic->id);
+
     }
 
     /**
@@ -47,7 +62,7 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        $comic = Comic::find($id);
+        $comic = Comic::findOrFail($id);
         return view('comics.show', compact('comic'));
     }
 

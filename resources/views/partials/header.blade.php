@@ -12,6 +12,7 @@
             <div class="navbar-nav ms-auto">
                 <a class="nav-link {{Route::currentRouteName() == 'home' ? 'active' :''}} aria-current="page" href="{{route('home')}}">Home</a>
                 <a class="nav-link {{Route::currentRouteName() == 'comics.index' ? 'active' :''}}" href="{{route('comics.index')}}">Comics</a>
+                <a class="nav-link {{Route::currentRouteName() == 'comics.create' ? 'active' :''}}" href="{{route('comics.create')}}">Create New</a>
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@
 <body>
 
     @include('partials/header')
-    <main class="container" style='height:100vh'>
+    <main class="container" style='min-height: 100vh'>
         @yield('content')
     </main>
     @include('partials/footer')
